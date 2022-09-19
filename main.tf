@@ -1,9 +1,17 @@
 terraform {
   required_providers {
     aws = {
-      source = "registry.terraform.io/hashicorp/aws"
+      source = "hashicorp/aws"
+      Version = "~>3.27"
     }
   }
+	
+  required_version = ">=0.14.9"
+}
+
+provider "aws" {
+  version = "~>3.0"
+  region  = "ap-south-1"
 }
 
 resource "aws_instance" "test_ec2" {
