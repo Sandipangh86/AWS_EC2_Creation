@@ -6,6 +6,7 @@ terraform {
   }
 }
 
+providers {
 resource "aws_instance" "test_ec2" {
   ami           = var.ami
   instance_type = var.instance_type
@@ -33,4 +34,5 @@ resource "aws_instance" "test_ec2" {
   credit_specification {
     cpu_credits = "unlimited"
   }
+}
 }
