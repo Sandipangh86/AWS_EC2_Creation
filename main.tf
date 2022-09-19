@@ -8,7 +8,7 @@ terraform {
 
 resource "aws_instance" "test_ec2" {
   ami           = "ami-06489866022e12a14"
-  instance_type = "t2.micro"e
+  instance_type = "t2.micro"
   iam_instance_profile = "sandi_terra_ssm"
   key_name =  "key-terraform-key"
   user_data = <<EOF
