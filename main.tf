@@ -7,10 +7,10 @@ terraform {
 }
 
 resource "aws_instance" "test_ec2" {
-  ami           = var.ami
-  instance_type = var.instance_type
+  ami           = "ami-06489866022e12a14"
+  instance_type = "t2.micro"e
   iam_instance_profile = "sandi_terra_ssm"
-  key_name =  "${var.keypair_name}"
+  key_name =  "key-terraform-key"
   user_data = <<EOF
  #!/bin/bash
  sleep 120
@@ -26,7 +26,7 @@ resource "aws_instance" "test_ec2" {
     OS = "Amazon_linux"
   }
   network_interface {
-    network_interface_id = var.network_interface_id
+    network_interface_id = "eni-0d4f43947b344f19d"
     device_index         = 0
   }
 
